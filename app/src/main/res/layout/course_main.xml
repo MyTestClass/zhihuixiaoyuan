@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <!--课表对应的周数-->
+    <include
+        android:id="@+id/title"
+        layout="@layout/course_table_title"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <!--星期-->
+    <include
+        android:id="@+id/week"
+        layout="@layout/course_weeks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title" />
+
+
+        <!-- 课程表主体部分 -->
+        <ScrollView
+            android:id="@+id/scroll_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/week"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+            <!--课程表左边的节数编号，也就是第几节课的-->
+            <include
+                android:id="@+id/courseNumber"
+                layout="@layout/course_number"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_below="@id/scroll_body"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="10">
+
+            </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+</RelativeLayout>
