@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Button button_study = (Button) findViewById(R.id.study);
         button_study.setOnClickListener(bl);
 
+        //首页显示课表
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         courseFragment = new Course_Fragment();
         currentFragment = courseFragment;
@@ -64,12 +65,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         transaction.commit();
 
     }
+//    底部按钮的监听
     class ButtonMenuListener implements View.OnClickListener{
-
         @Override
         public void onClick(View v) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-
             switch (v.getId()){
                 case R.id.course:
                     if(courseFragment==null) {

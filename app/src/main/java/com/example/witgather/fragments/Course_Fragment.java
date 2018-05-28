@@ -41,13 +41,10 @@ public class Course_Fragment extends Fragment {
         course_beans.add(courseBean1);
     }
 
-    private Context context;
     @Override
     public void onInflate(Context context, AttributeSet attrs, Bundle savedInstanceState) {
-        this.context = context;
         super.onInflate(context, attrs, savedInstanceState);
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.course_main,container,false);
@@ -73,10 +70,15 @@ public class Course_Fragment extends Fragment {
                 LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.MATCH_PARENT,0);
                 layoutParams.weight = courseBean.getLength();
-                layoutParams.setMargins(6,0,6,6);
+//                最左边一列和右边一列的特殊处理
+                if(rootView.getId()==R.id.monday)
+                    layoutParams.setMargins(0,0,6,6);
+                else if(rootView.getId()==R.id.sunday)
+                    layoutParams.setMargins(6,0,0,6);
+                else
+                    layoutParams.setMargins(6,0,6,6);
 
                 LinearLayout linearLayout = new LinearLayout(rootView.getContext());
-
                 linearLayout.setBackgroundColor(getColor(courseBean.getColorId()));
 //                课程的名字
                 TextView courseName = new TextView(rootView.getContext());
