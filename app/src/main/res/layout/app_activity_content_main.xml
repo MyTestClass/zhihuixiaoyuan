@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <FrameLayout
+        android:id="@+id/fragment"
+        android:layout_width="match_parent"
+        android:layout_marginTop="56dp"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        >
+    </FrameLayout >
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_weight="1"
+       android:gravity="bottom"
+       android:paddingBottom="3dp"
+       >
+       <Button
+           android:id="@+id/course"
+           android:layout_width="wrap_content"
+           android:layout_height="match_parent"
+           android:textSize="14dp"
+           android:drawableTop="@mipmap/course_sel"
+           android:background="@color/category_tab_text_dark"
+           android:layout_weight="1"
+           android:text="@string/main_menu_course"
+           />
+       <Button
+           android:id="@+id/object"
+           android:layout_width="wrap_content"
+           android:layout_height="match_parent"
+           android:textSize="14dp"
+           android:background="@color/category_tab_text_dark"
+           android:layout_weight="1"
+           android:drawableTop="@mipmap/course_sel"
+           android:text="@string/main_menu_object"
+           />
+       <Button
+           android:id="@+id/express"
+           android:layout_width="wrap_content"
+           android:layout_height="match_parent"
+           android:textSize="14dp"
+           android:drawableTop="@mipmap/course_sel"
+           android:background="@color/category_tab_text_dark"
+           android:layout_weight="1"
+           android:text="@string/main_menu_express"
+           />
+       <Button
+           android:id="@+id/study"
+           android:layout_width="wrap_content"
+           android:layout_height="match_parent"
+           android:textSize="14dp"
+           android:drawableTop="@mipmap/course_sel"
+           android:background="@color/category_tab_text_dark"
+           android:layout_weight="1"
+           android:text="@string/main_menu_study"
+           />
+   </LinearLayout>
+
+</LinearLayout>

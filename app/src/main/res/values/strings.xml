@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">智汇校园</string>
-
+    <string name="main_menu_course">课表</string>
+    <string name="main_menu_object">闲置</string>
+    <string name="main_menu_express">快递</string>
+    <string name="main_menu_study">学习</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 

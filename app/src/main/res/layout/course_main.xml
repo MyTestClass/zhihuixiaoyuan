@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
     <!--课表对应的周数-->
     <include
         android:id="@+id/title"
         layout="@layout/course_table_title"
         android:layout_width="match_parent"
-        android:layout_height="40dp" />
+        android:layout_height="20dp"
+        />
     <!--星期-->
     <include
         android:id="@+id/week"
         layout="@layout/course_weeks"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/title" />
-
-
+        />
         <!-- 课程表主体部分 -->
         <ScrollView
             android:id="@+id/scroll_body"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/week"
             >
             <LinearLayout
                 android:layout_width="match_parent"
@@ -35,15 +35,59 @@
                 layout="@layout/course_number"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_below="@id/scroll_body"
-                android:layout_weight="1" />
+                android:layout_weight="0.5" />
+                <LinearLayout
+                    android:id="@+id/monday"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/tuesday"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="10">
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/wednesday"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:id="@+id/thursday"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                </LinearLayout>
 
-            </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/friday"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/saturday"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/sunday"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                </LinearLayout>
             </LinearLayout>
         </ScrollView>
-</RelativeLayout>
+</LinearLayout>

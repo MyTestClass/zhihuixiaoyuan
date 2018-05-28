@@ -5,57 +5,70 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0.6"
             android:text=""
-            style="@style/courseTableText"
             />
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="周一"
-            style="@style/courseTableText"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:textColor="@color/courseName"
             />
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="周二"
-            style="@style/courseTableText"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:textColor="@color/courseName"
             />
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="周三"
-            style="@style/courseTableText"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:textColor="@color/courseName"
             />
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="周四"
-            style="@style/courseTableText"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:textColor="@color/courseName"
             />
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="周五"
-            style="@style/courseTableText"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:textColor="@color/courseName"
             />
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="周六"
-            style="@style/courseTableText"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:textColor="@color/courseName"
             />
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="周日"
-            style="@style/courseTableText"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:textColor="@color/courseName"
             />
 </LinearLayout>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="courseName">#000000</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
@@ -19,4 +20,15 @@
     <color name="top_category_bar_background">#ffeeeeee</color>
     <color name="divider">#ffdddddd</color>
 
+
+    <color name="course1">#edc574</color>
+    <color name="course2">#82f480</color>
+    <color name="course3">#4182f1</color>
+    <color name="course4">#eb7ede</color>
+    <color name="course5">#09b69a</color>
+    <color name="course6">#865c4d40</color>
+    <color name="course7">#ffe100</color>
+    <color name="course8">#43f02d85</color>
+    <color name="course9">#ef5735</color>
+    <color name="course10">#4f6f05</color>
 </resources>
