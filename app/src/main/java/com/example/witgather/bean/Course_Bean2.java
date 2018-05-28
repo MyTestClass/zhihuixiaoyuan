@@ -3,7 +3,7 @@ package com.example.witgather.bean;
 /**
  * 这是代表的是一个课程的实体
  */
-public class Course_Bean {
+public class Course_Bean2 {
 
     private String course_name;
     private String course_place;
