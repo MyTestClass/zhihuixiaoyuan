@@ -20,7 +20,8 @@ import com.example.witgather.fragments.Course_Fragment;
 import com.example.witgather.fragments.ObjectFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private Fragment currentFragment;
+//    用于临时保存Fragment的
+   private Fragment currentFragment;
     private Fragment courseFragment;
     private Fragment objectFragment;
     private Fragment studyFragment;
