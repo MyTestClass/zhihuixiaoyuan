@@ -80,7 +80,6 @@ public class Course_Fragment extends Fragment {
                     layoutParams.setMargins(6,0,6,6);
 
                 LinearLayout linearLayout = new LinearLayout(rootView.getContext());
-
                 linearLayout.setBackgroundColor(getColor(courseBean.getColorId()));
 //                课程的名字
                 TextView courseName = new TextView(rootView.getContext());

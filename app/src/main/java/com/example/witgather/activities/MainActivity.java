@@ -22,9 +22,15 @@ import com.example.witgather.fragments.Express_Fragment;
 import com.example.witgather.fragments.ObjectFragment;
 import com.example.witgather.fragments.Study_Fragment;
 
+<<<<<<< HEAD
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,RadioGroup.OnCheckedChangeListener {
 //    用于临时保存Fragment的
     private Fragment currentFragment;
+=======
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+//    用于临时保存Fragment的
+   private Fragment currentFragment;
+>>>>>>> 19ee82a79455fd8e0a683331358a2e75432cf748
     private Fragment courseFragment;
     private Fragment objectFragment;
     private Fragment studyFragment;
@@ -58,6 +64,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         transaction.commit();
 
     }
+<<<<<<< HEAD
 
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -90,6 +97,36 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             if(studyFragment==null){
                 studyFragment = new Study_Fragment();
                 transaction.add(R.id.fragment,studyFragment);
+=======
+//    底部按钮的监听
+    class ButtonMenuListener implements View.OnClickListener{
+        @Override
+        public void onClick(View v) {
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            switch (v.getId()){
+                case R.id.course:
+                    if(courseFragment==null) {
+                        courseFragment = new Course_Fragment();
+                       transaction.add(R.id.fragment,courseFragment);
+                    }
+                    transaction.hide(currentFragment);
+                    currentFragment = courseFragment;
+                    transaction.show(courseFragment);
+                    break;
+                case R.id.object:
+                    if (objectFragment==null){
+                        objectFragment = new ObjectFragment();
+                        transaction.add(R.id.fragment,objectFragment);
+                    }
+                    transaction.hide(currentFragment);
+                    currentFragment = objectFragment;
+                    transaction.show(objectFragment);
+                    break;
+                case R.id.express:
+                    break;
+                case R.id.study:
+                    break;
+>>>>>>> 19ee82a79455fd8e0a683331358a2e75432cf748
             }
             transaction.hide(currentFragment);
             currentFragment = studyFragment;
