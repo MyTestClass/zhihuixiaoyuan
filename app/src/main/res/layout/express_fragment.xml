@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <RadioGroup
+        android:id="@+id/express_radio_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <RadioButton
+            android:id="@+id/publish_express_radio_button"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="发布快递"
+            android:checked="true"
+            android:gravity="center"
+            android:background="@drawable/radiobutton_selector"
+            style="@style/radiobutton"
+            />
+
+        <RadioButton
+            android:id="@+id/get_express_radio_button"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="我要接单"
+            style="@style/radiobutton"
+            android:background="@drawable/radiobutton_selector"
+            android:gravity="center"
+            />
+
+    </RadioGroup>
+    <FrameLayout
+        android:id="@+id/express_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
+</LinearLayout>

@@ -1,5 +1,6 @@
 package com.example.witgather.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -13,13 +14,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.FrameLayout;
+import android.widget.RadioGroup;
 
 import com.example.witgather.R;
 import com.example.witgather.fragments.Course_Fragment;
+import com.example.witgather.fragments.Express_Fragment;
 import com.example.witgather.fragments.ObjectFragment;
+import com.example.witgather.fragments.Study_Fragment;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,RadioGroup.OnCheckedChangeListener {
+//    用于临时保存Fragment的
     private Fragment currentFragment;
     private Fragment courseFragment;
     private Fragment objectFragment;
@@ -42,19 +46,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        ButtonMenuListener bl = new ButtonMenuListener();
-        Button button_course = (Button) findViewById(R.id.course);
-        button_course.setOnClickListener(bl);
+        RadioGroup group = (RadioGroup)findViewById(R.id.main_radio_button);
+        group.setOnCheckedChangeListener(this);
 
-        Button button_object = (Button) findViewById(R.id.object);
-        button_object.setOnClickListener(bl);
-
-        Button button_express = (Button) findViewById(R.id.express);
-        button_express.setOnClickListener(bl);
-
-        Button button_study = (Button) findViewById(R.id.study);
-        button_study.setOnClickListener(bl);
-
+        //首页显示课表
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         courseFragment = new Course_Fragment();
         currentFragment = courseFragment;
@@ -63,39 +58,46 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         transaction.commit();
 
     }
-    class ButtonMenuListener implements View.OnClickListener{
 
-        @Override
-        public void onClick(View v) {
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-
-            switch (v.getId()){
-                case R.id.course:
-                    if(courseFragment==null) {
-                        courseFragment = new Course_Fragment();
-                       transaction.add(R.id.fragment,courseFragment);
-                    }
-                    transaction.hide(currentFragment);
-                    currentFragment = courseFragment;
-                    transaction.show(courseFragment);
-                    break;
-                case R.id.object:
-                    if (objectFragment==null){
-                        objectFragment = new ObjectFragment();
-                        transaction.add(R.id.fragment,objectFragment);
-                    }
-                    transaction.hide(currentFragment);
-                    currentFragment = objectFragment;
-                    transaction.show(objectFragment);
-                    break;
-                case R.id.express:
-                    break;
-                case R.id.study:
-                    break;
+    @Override
+    public void onCheckedChanged(RadioGroup group, int checkedId) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        if(checkedId == R.id.course){
+            if(courseFragment==null) {
+                courseFragment = new Course_Fragment();
+                transaction.add(R.id.fragment,courseFragment);
             }
-            transaction.commit();
+            transaction.hide(currentFragment);
+            currentFragment = courseFragment;
+            transaction.show(courseFragment);
+        }else if(checkedId==R.id.object){
+            if (objectFragment==null){
+                objectFragment = new ObjectFragment();
+                transaction.add(R.id.fragment,objectFragment);
+            }
+            transaction.hide(currentFragment);
+            currentFragment = objectFragment;
+            transaction.show(objectFragment);
+        }else if(checkedId == R.id.express){
+            if (expressFragment==null){
+                expressFragment = new Express_Fragment();
+                transaction.add(R.id.fragment,expressFragment);
+            }
+            transaction.hide(currentFragment);
+            currentFragment = expressFragment;
+            transaction.show(expressFragment);
+        }else if(checkedId == R.id.study){
+            if(studyFragment==null){
+                studyFragment = new Study_Fragment();
+                transaction.add(R.id.fragment,studyFragment);
+            }
+            transaction.hide(currentFragment);
+            currentFragment = studyFragment;
+            transaction.show(currentFragment);
         }
+        transaction.commit();
     }
+
 
 //返回按钮的监听，这里点击的时候就关闭抽屉
     @Override
@@ -122,24 +124,31 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         return super.onOptionsItemSelected(item);
     }
-    @SuppressWarnings("StatementWithEmptyBody")
+
+    private Intent intent = new Intent();
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
+        if(id == R.id.nav_qiehuanzhanghao){
+            intent.setClass(this,Login_Activity.class);
+        }else if(id == R.id.nav_register){
+            intent.setClass(this,Register_Activity.class);
+        }else if(id == R.id.nav_banbensheji){
 
-//        if (id == R.id.nav_camera) {
-//
-//        } else if (id == R.id.nav_gallery) {
-//
-//        } else if (id == R.id.nav_slideshow) {
-//
-//        } else if (id == R.id.nav_manage) {
-//
-//        } else if (id == R.id.nav_share) {
-//
-//        } else if (id == R.id.nav_send) {
-//
-//        }
+        }else if(id == R.id.nav_naozhongshezhi){
+
+        }else if(id == R.id.nav_wodeshezhi){
+
+        }else if(id == R.id.nav_tuichudenglu){
+            Runtime.getRuntime().exit(1);
+        }else if(id == R.id.nav_xiugaiwodexinxi){
+
+        }else if(id== R.id.nav_qingchuhuancun){
+
+        }else if(id == R.id.nav_yonghufankui){
+
+        }
+        startActivity(intent);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

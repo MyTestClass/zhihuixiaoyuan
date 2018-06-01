@@ -3,25 +3,42 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_relogin"
+            android:id="@+id/nav_qiehuanzhanghao"
             android:icon="@drawable/ic_menu_share"
-            android:title="重新登陆" />
+            android:title="切换账号" />
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_manage"
+            android:id="@+id/nav_wodeshezhi"
+            android:icon="@mipmap/setting"
+            android:title="我的设置" />
+        <item
+            android:id="@+id/nav_naozhongshezhi"
+            android:icon="@mipmap/clock"
             android:title="闹钟设置" />
+
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="修改我的信息" />
+            android:id="@+id/nav_xiugaiwodexinxi"
+            android:icon="@mipmap/user_info"
+            android:title="修改信息" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:id="@+id/nav_banbensheji"
+            android:icon="@mipmap/updatesoft"
             android:title="版本升级" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_send"
+            android:id="@+id/nav_yonghufankui"
+            android:icon="@mipmap/userfeedback"
             android:title="用户反馈" />
+        <item
+            android:id="@+id/nav_qingchuhuancun"
+            android:icon="@mipmap/clearcache"
+            android:title="清除缓存" />
+        <item
+            android:id="@+id/nav_register"
+            android:icon="@mipmap/nav_register"
+            android:title="注册" />
+        <item
+            android:id="@+id/nav_tuichudenglu"
+            android:icon="@mipmap/exit"
+            android:title="退出" />
     </group>
 
     <!--<item android:title="Communicate">-->
