@@ -22,15 +22,9 @@ import com.example.witgather.fragments.Express_Fragment;
 import com.example.witgather.fragments.ObjectFragment;
 import com.example.witgather.fragments.Study_Fragment;
 
-<<<<<<< HEAD
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,RadioGroup.OnCheckedChangeListener {
-//    用于临时保存Fragment的
+    //    用于临时保存Fragment的
     private Fragment currentFragment;
-=======
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-//    用于临时保存Fragment的
-   private Fragment currentFragment;
->>>>>>> 19ee82a79455fd8e0a683331358a2e75432cf748
     private Fragment courseFragment;
     private Fragment objectFragment;
     private Fragment studyFragment;
@@ -42,10 +36,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-            this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
@@ -64,41 +57,44 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         transaction.commit();
 
     }
-<<<<<<< HEAD
 
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
+        System.out.println("-------------");
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        if(checkedId == R.id.course){
-            if(courseFragment==null) {
+        if (checkedId == R.id.course) {
+            if (courseFragment == null) {
                 courseFragment = new Course_Fragment();
-                transaction.add(R.id.fragment,courseFragment);
+                transaction.add(R.id.fragment, courseFragment);
             }
             transaction.hide(currentFragment);
             currentFragment = courseFragment;
-            transaction.show(courseFragment);
-        }else if(checkedId==R.id.object){
-            if (objectFragment==null){
+        } else if (checkedId == R.id.object) {
+            if (objectFragment == null) {
                 objectFragment = new ObjectFragment();
-                transaction.add(R.id.fragment,objectFragment);
+                transaction.add(R.id.fragment, objectFragment);
             }
             transaction.hide(currentFragment);
             currentFragment = objectFragment;
-            transaction.show(objectFragment);
-        }else if(checkedId == R.id.express){
-            if (expressFragment==null){
+        } else if (checkedId == R.id.express) {
+            if (expressFragment == null) {
                 expressFragment = new Express_Fragment();
-                transaction.add(R.id.fragment,expressFragment);
+                transaction.add(R.id.fragment, expressFragment);
             }
             transaction.hide(currentFragment);
             currentFragment = expressFragment;
-            transaction.show(expressFragment);
-        }else if(checkedId == R.id.study){
-            if(studyFragment==null){
+        } else if (checkedId == R.id.study) {
+            if (studyFragment == null) {
                 studyFragment = new Study_Fragment();
-                transaction.add(R.id.fragment,studyFragment);
-=======
-//    底部按钮的监听
+                transaction.add(R.id.fragment, studyFragment);
+            }
+            transaction.hide(currentFragment);
+            currentFragment = studyFragment;
+        }
+        transaction.show(currentFragment);
+        transaction.commit();
+    }
+    //    底部按钮的监听
     class ButtonMenuListener implements View.OnClickListener{
         @Override
         public void onClick(View v) {
@@ -107,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 case R.id.course:
                     if(courseFragment==null) {
                         courseFragment = new Course_Fragment();
-                       transaction.add(R.id.fragment,courseFragment);
+                        transaction.add(R.id.fragment,courseFragment);
                     }
                     transaction.hide(currentFragment);
                     currentFragment = courseFragment;
@@ -126,17 +122,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     break;
                 case R.id.study:
                     break;
->>>>>>> 19ee82a79455fd8e0a683331358a2e75432cf748
             }
             transaction.hide(currentFragment);
             currentFragment = studyFragment;
             transaction.show(currentFragment);
+            transaction.commit();
         }
-        transaction.commit();
     }
-
-
-//返回按钮的监听，这里点击的时候就关闭抽屉
+    //返回按钮的监听，这里点击的时候就关闭抽屉
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -146,13 +139,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             super.onBackPressed();
         }
     }
-//右上角的菜单栏
+    //右上角的菜单栏
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
-//右上角菜单栏的监听事件
+    //右上角菜单栏的监听事件
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
